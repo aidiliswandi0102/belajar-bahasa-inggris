@@ -63,6 +63,7 @@ const tabHeaders = {
   flashcards: { title: 'Flashcard Challenge', sub: 'Click a card to reveal its translation.' },
   vocabulary: { title: 'Study Materials', sub: 'Vocabulary, grammar, and conversation practice.' },
   practice:   { title: 'Leveled Practice', sub: 'Complete each level to unlock the next.' },
+  profile:    { title: 'Profile', sub: 'Kenali pembuat English Lab.' },
 };
 
 /* ─── DOM REFS ───────────────────────────── */
