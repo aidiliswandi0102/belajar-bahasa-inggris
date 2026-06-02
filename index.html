@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>English Lab — Learn English</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain"></div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner container">
+      <a class="brand" href="#">
+        <span class="brand-icon">E</span>
+        English Lab
+      </a>
+      <nav class="nav-links" id="mainNav">
+        <a href="#" class="nav-tab active" data-tab="home">Home</a>
+        <a href="#" class="nav-tab" data-tab="word-day">Word</a>
+        <a href="#" class="nav-tab" data-tab="flashcards">Flashcards</a>
+        <a href="#" class="nav-tab" data-tab="vocabulary">Materials</a>
+        <a href="#" class="nav-tab" data-tab="practice">Practice</a>
+      </nav>
+      <div class="header-right">
+        <div class="gold-line-dec"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <div id="heroSection" class="hero-section">
+    <div class="hero-ornament">MMXXV</div>
+    <div class="container hero-layout">
+      <div class="hero-left">
+        <div class="hero-tag"><span class="tag-dot"></span>Curated English Learning</div>
+        <h1 class="hero-title">Master<br><em>English</em><br>Your Way.</h1>
+        <p class="hero-sub">Interactive flashcards, leveled quizzes, and daily vocabulary — refined for every learner.</p>
+        <div class="hero-cta">
+          <button class="cta-btn primary" data-nav="practice">Start Practice</button>
+          <button class="cta-btn ghost" data-nav="flashcards">Try Flashcards</button>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-stats">
+          <div class="hstat">
+            <span class="hstat-num">4</span>
+            <span class="hstat-label">Skill Levels</span>
+          </div>
+          <div class="hstat hstat-accent">
+            <span class="hstat-num" id="heroWord">Amazing</span>
+            <span class="hstat-label">Word of the Day</span>
+          </div>
+          <div class="hstat">
+            <span class="hstat-num">6+</span>
+            <span class="hstat-label">Flashcard Topics</span>
+          </div>
+        </div>
+        <div class="hero-feature-cards">
+          <div class="hfc">
+            <div class="hfc-icon">⚡</div>
+            <div>
+              <p class="hfc-title">Interactive Flashcards</p>
+              <p class="hfc-sub">Flip to reveal meanings</p>
+            </div>
+          </div>
+          <div class="hfc">
+            <div class="hfc-icon">🎯</div>
+            <div>
+              <p class="hfc-title">Leveled Quizzes</p>
+              <p class="hfc-sub">Unlock each stage</p>
+            </div>
+          </div>
+          <div class="hfc">
+            <div class="hfc-icon">📈</div>
+            <div>
+              <p class="hfc-title">Track Progress</p>
+              <p class="hfc-sub">Score every session</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <div id="pageHeader" class="page-header hidden">
+    <div class="container">
+      <div class="ph-rule"></div>
+      <h2 id="pageHeaderTitle" class="page-header-title"></h2>
+      <p id="pageHeaderSub" class="page-header-sub"></p>
+    </div>
+  </div>
+
+  <main class="container main-content">
+
+    <!-- HOME -->
+    <section id="tab-home" class="tab-panel active">
+      <div class="home-intro-card">
+        <p>Welcome to <strong>English Lab</strong> — your daily space to build vocabulary, practice grammar, and sharpen your conversational English. Pick a tab above to get started.</p>
+      </div>
+      <div class="home-grid">
+        <div class="home-card">
+          <div class="home-card-num">01</div>
+          <h3>Interactive Flashcards</h3>
+          <p>Click a card to flip it and reveal its translation. Shuffle anytime.</p>
+        </div>
+        <div class="home-card">
+          <div class="home-card-num">02</div>
+          <h3>Practical Grammar</h3>
+          <p>Understand key grammar rules with real-use examples every session.</p>
+        </div>
+        <div class="home-card">
+          <div class="home-card-num">03</div>
+          <h3>Visual Progress</h3>
+          <p>Track your growth through scores and quiz results per level.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORD OF DAY -->
+    <section id="tab-word-day" class="tab-panel">
+      <div class="word-hero-card">
+        <div class="word-hero-left">
+          <p class="wh-label">Today's Word</p>
+          <h2 id="wordText" class="wh-word">Amazing</h2>
+          <p id="wordMeaning" class="wh-meaning">Meaning: extraordinary</p>
+          <p id="wordExample" class="wh-example">"He did an amazing job on the project."</p>
+          <button id="newWordBtn" class="pill-btn">Next Word →</button>
+        </div>
+        <div class="word-hero-right">
+          <div class="tip-box">
+            <div class="tip-icon">💡</div>
+            <p class="tip-label">Learning Tip</p>
+            <p id="dailyTip">Repeat a new word eight times in different contexts to help it stick in memory.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLASHCARDS -->
+    <section id="tab-flashcards" class="tab-panel">
+      <div class="section-bar">
+        <p class="section-count" id="cardCount">6 cards</p>
+        <button id="shuffleCards" class="pill-btn">Shuffle ↺</button>
+      </div>
+      <div id="flashcardGrid" class="flashcards-grid"></div>
+    </section>
+
+    <!-- VOCABULARY -->
+    <section id="tab-vocabulary" class="tab-panel">
+      <div class="vocab-cols">
+        <div class="vocab-group">
+          <h3 class="vg-title">Greetings</h3>
+          <ul class="vg-list">
+            <li><span class="vg-en">Hello</span><span class="vg-id">Halo</span></li>
+            <li><span class="vg-en">Good morning</span><span class="vg-id">Selamat pagi</span></li>
+            <li><span class="vg-en">How are you?</span><span class="vg-id">Apa kabar?</span></li>
+          </ul>
+        </div>
+        <div class="vocab-group">
+          <h3 class="vg-title">Activities</h3>
+          <ul class="vg-list">
+            <li><span class="vg-en">Study</span><span class="vg-id">Belajar</span></li>
+            <li><span class="vg-en">Read</span><span class="vg-id">Membaca</span></li>
+            <li><span class="vg-en">Write</span><span class="vg-id">Menulis</span></li>
+          </ul>
+        </div>
+        <div class="vocab-group">
+          <h3 class="vg-title">Feelings</h3>
+          <ul class="vg-list">
+            <li><span class="vg-en">Happy</span><span class="vg-id">Bahagia</span></li>
+            <li><span class="vg-en">Sad</span><span class="vg-id">Sedih</span></li>
+            <li><span class="vg-en">Tired</span><span class="vg-id">Lelah</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-card mt-lg">
+        <div class="content-card-header">
+          <span class="cc-tag">Grammar</span>
+          <h2>Basic Sentence Structures</h2>
+        </div>
+        <div class="grammar-grid">
+          <div class="grammar-item">
+            <h4>To Be</h4>
+            <p class="gi-en">I am a student.</p>
+            <p class="gi-id">Saya seorang pelajar.</p>
+            <p class="gi-en">He is happy.</p>
+            <p class="gi-id">Dia senang.</p>
+          </div>
+          <div class="grammar-item">
+            <h4>Simple Present</h4>
+            <p class="gi-en">She studies English.</p>
+            <p class="gi-id">Dia belajar bahasa Inggris.</p>
+            <p class="gi-en">We read books every day.</p>
+            <p class="gi-id">Kami membaca buku setiap hari.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-card mt-lg">
+        <div class="content-card-header">
+          <span class="cc-tag">Conversation</span>
+          <h2>Short Dialogue</h2>
+        </div>
+        <div class="dialog-box">
+          <div class="dialog-line a"><span class="speaker">A</span><p>Hello! How are you?</p></div>
+          <div class="dialog-line b"><span class="speaker">B</span><p>I'm fine, thank you. And you?</p></div>
+          <div class="dialog-line a"><span class="speaker">A</span><p>I'm good. What are you doing today?</p></div>
+          <div class="dialog-line b"><span class="speaker">B</span><p>I am studying English.</p></div>
+        </div>
+      </div>
+
+      <div class="content-card mt-lg">
+        <div class="content-card-header">
+          <span class="cc-tag">Deep Dive</span>
+          <h2>Simple Present — Full Guide</h2>
+        </div>
+
+        <div class="sp-section">
+          <h3>📖 What is Simple Present?</h3>
+          <p>Used for habits, general truths, jobs, and feelings.</p>
+          <ul class="sp-list">
+            <li><strong>Habits/Routines:</strong> "She goes to school every day."</li>
+            <li><strong>General Facts:</strong> "The Earth revolves around the Sun."</li>
+            <li><strong>Jobs:</strong> "He works as a teacher."</li>
+            <li><strong>Feelings:</strong> "I like coffee."</li>
+          </ul>
+        </div>
+
+        <div class="sp-section">
+          <h3>🔧 Formula</h3>
+          <div class="formula-row">
+            <div class="formula-block positive">
+              <span class="fb-label">Positive</span>
+              <code>Subject + Verb (+s/+es) + Object</code>
+              <p class="fb-ex">✓ She <mark>plays</mark> tennis.</p>
+            </div>
+            <div class="formula-block negative">
+              <span class="fb-label">Negative</span>
+              <code>Subject + do/does NOT + Verb</code>
+              <p class="fb-ex">✗ She <mark>does not</mark> play tennis.</p>
+            </div>
+            <div class="formula-block question">
+              <span class="fb-label">Question</span>
+              <code>Do/Does + Subject + Verb?</code>
+              <p class="fb-ex">? <mark>Does</mark> she play tennis?</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sp-section">
+          <h3>👤 Do vs Does</h3>
+          <div class="do-does-table">
+            <div class="ddt-row header">
+              <span>Subject</span><span>Helper</span><span>Example</span>
+            </div>
+            <div class="ddt-row">
+              <span>I / You / We / They</span>
+              <span class="do-pill">do</span>
+              <span>I <strong>play</strong> football.</span>
+            </div>
+            <div class="ddt-row">
+              <span>He / She / It</span>
+              <span class="does-pill">does</span>
+              <span>He <strong>plays</strong> football.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sp-section">
+          <h3>💡 When to add -es</h3>
+          <div class="rules-grid">
+            <div class="rule-card">
+              <h4>Ends in -s, -x, -z, -ch, -sh</h4>
+              <code>pass → passes</code>
+              <code>watch → watches</code>
+            </div>
+            <div class="rule-card">
+              <h4>Consonant + y</h4>
+              <code>study → studies</code>
+              <code>carry → carries</code>
+            </div>
+            <div class="rule-card">
+              <h4>Ends in -o</h4>
+              <code>go → goes</code>
+              <code>do → does</code>
+            </div>
+            <div class="rule-card">
+              <h4>Vowel + y (just add -s)</h4>
+              <code>play → plays</code>
+              <code>stay → stays</code>
+            </div>
+          </div>
+        </div>
+
+        <div class="sp-section">
+          <h3>⚠️ Common Mistakes</h3>
+          <div class="mistakes-grid">
+            <div class="mistake-card">
+              <p class="wrong">❌ She don't like pizza.</p>
+              <p class="correct">✓ She <strong>doesn't</strong> like pizza.</p>
+            </div>
+            <div class="mistake-card">
+              <p class="wrong">❌ He go to school.</p>
+              <p class="correct">✓ He <strong>goes</strong> to school.</p>
+            </div>
+            <div class="mistake-card">
+              <p class="wrong">❌ Do she like coffee?</p>
+              <p class="correct">✓ <strong>Does</strong> she like coffee?</p>
+            </div>
+            <div class="mistake-card">
+              <p class="wrong">❌ They doesn't play tennis.</p>
+              <p class="correct">✓ They <strong>don't</strong> play tennis.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRACTICE -->
+    <section id="tab-practice" class="tab-panel">
+      <div id="levelSelectionView">
+        <div class="levels-grid" id="levelsGrid"></div>
+      </div>
+      <div id="quizView" style="display:none;">
+        <div class="quiz-topbar">
+          <button id="backBtn" class="pill-btn">← Back</button>
+          <span id="levelBadge" class="level-badge">Level 1</span>
+          <span id="quizScore" class="score-chip">0 / 0 correct</span>
+        </div>
+        <div id="quiz" class="quiz-questions"></div>
+        <div class="quiz-actions">
+          <button id="checkBtn" class="action-btn primary">Check Answers</button>
+          <button id="resetBtn" class="action-btn ghost">Restart</button>
+        </div>
+        <div id="result" class="result-msg"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-rule"></div>
+      <span class="brand">English Lab</span>
+      <p>Build your English skills — one day at a time.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
